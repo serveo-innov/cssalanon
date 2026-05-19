@@ -1,0 +1,525 @@
+@extends('layouts.app')
+
+@section('title', 'À propos – École SALANON')
+
+@section('content')
+
+    {{-- Breadcrumb --}}
+    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/breadcrumb-bg.png') }}');">
+        <div class="shape-1"><img src="{{ asset('assets/img/shape1.png') }}" alt=""></div>
+        <div class="shape-2"><img src="{{ asset('assets/img/shape-2.png') }}" alt=""></div>
+        <div class="shape-3"><img src="{{ asset('assets/img/shape-3.png') }}" alt=""></div>
+        <div class="shape-4"><img src="{{ asset('assets/img/shape-4.png') }}" alt=""></div>
+        <div class="container">
+            <div class="page-heading">
+                <div class="breadcrumb-sub-title">
+                    <h1 class="wow fadeInUp" data-wow-delay=".3s">À propos de nous</h1>
+                </div>
+                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                    <li>
+                        <a href="{{ route('home') }}">
+                            <i class="fa-solid fa-house"></i> Accueil
+                        </a>
+                    </li>
+                    <li>/</li>
+                    <li>À propos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {{-- Feature Section --}}
+    <section class="feature-section section-padding pb-0">
+        <div class="penil-shape">
+            <img src="{{ asset('assets/img/home-1/pencil1.png') }}" alt="">
+        </div>
+        <div class="zirap-shape float-bob-y">
+            <img src="{{ asset('assets/img/home-1/zirap1.png') }}" alt="">
+        </div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="feature-box-items">
+                        <div class="feature-bg"></div>
+                        <div class="border-circle">
+                            <img src="{{ asset('assets/img/home-1/icon/border-circle.png') }}" alt="">
+                        </div>
+                        <div class="icon-box">
+                            <img src="{{ asset('assets/img/home-1/icon/icon-box.png') }}" alt="">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/home-1/icon/icon-1.svg') }}" alt="">
+                            </div>
+                        </div>
+                        <h2>Apprentissage actif</h2>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="feature-box-items">
+                        <div class="feature-bg bg-2"></div>
+                        <div class="border-circle">
+                            <img src="{{ asset('assets/img/home-1/icon/border-circle.png') }}" alt="">
+                        </div>
+                        <div class="icon-box">
+                            <img src="{{ asset('assets/img/home-1/icon/icon-box.png') }}" alt="">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/home-1/icon/icon-2.svg') }}" alt="">
+                            </div>
+                        </div>
+                        <h2>Enseignants experts</h2>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="feature-box-items">
+                        <div class="feature-bg bg-3"></div>
+                        <div class="border-circle">
+                            <img src="{{ asset('assets/img/home-1/icon/border-circle.png') }}" alt="">
+                        </div>
+                        <div class="icon-box">
+                            <img src="{{ asset('assets/img/home-1/icon/icon-box.png') }}" alt="">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/home-1/icon/icon-3.svg') }}" alt="">
+                            </div>
+                        </div>
+                        <h2>École 100% sécurisée</h2>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                    <div class="feature-box-items">
+                        <div class="feature-bg bg-4"></div>
+                        <div class="border-circle">
+                            <img src="{{ asset('assets/img/home-1/icon/border-circle.png') }}" alt="">
+                        </div>
+                        <div class="icon-box">
+                            <img src="{{ asset('assets/img/home-1/icon/icon-box.png') }}" alt="">
+                            <div class="icon">
+                                <img src="{{ asset('assets/img/home-1/icon/icon-4.svg') }}" alt="">
+                            </div>
+                        </div>
+                        <h2>Programme moderne</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- About Section --}}
+    <section class="about-section fix section-padding">
+        <div class="about-vec"><img src="{{ asset('assets/img/home-1/about-vec.png') }}" alt=""></div>
+        <div class="about-vec2"><img src="{{ asset('assets/img/home-1/about-vec2.png') }}" alt=""></div>
+        <div class="about-vec3"><img src="{{ asset('assets/img/home-1/about-3.png') }}" alt=""></div>
+        <div class="about-wrapper">
+            <div class="about-line"><img src="{{ asset('assets/img/home-2/about-line.png') }}" alt=""></div>
+            <div class="bg-shape"></div>
+            <div class="row align-items-center">
+                <div class="col-xl-6 order-2 order-xl-1">
+                    <div class="about-image">
+                        <img src="{{ asset('assets/img/home-1/about-1.png') }}" alt="" class="wow fadeInUp">
+                        <div class="about-image-2">
+                            <img src="{{ asset('assets/img/home-1/about-2.png') }}" alt="" class="wow fadeInUp" data-wow-delay=".3s">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 order-1 order-xl-2">
+                    <div class="about-content">
+                        <div class="section-title mb-0">
+                            <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">À propos de nous</span>
+                            <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+                                Inspirer la croissance par l'apprentissage au quotidien
+                            </h2>
+                        </div>
+                        <p class="about-text wow fadeInUp">
+                            L'École SALANON est dédiée à construire des bases solides à travers un apprentissage ludique et académique, dans un environnement bienveillant.
+                        </p>
+                        <ul class="icon-box">
+                            <li class="wow fadeInUp" data-wow-delay=".3s">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/home-1/icon/check.svg') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h3>Environnement d'apprentissage <br> adapté à l'enfant</h3>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay=".5s">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/home-1/icon/check.svg') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h3>Priorité à une éducation<br>sûre et de qualité</h3>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="about-text-2 wow fadeInUp" data-wow-delay=".4s">
+                            À l'École SALANON, notre objectif est d'offrir à chaque enfant les meilleures chances de réussite. Notre équipe pédagogique qualifiée conçoit des activités enrichissantes et ludiques pour accompagner chaque élève vers l'excellence.
+                        </p>
+                        <div class="about-button wow fadeInUp" data-wow-delay=".6s">
+                            <a href="{{ route('contact') }}" class="theme-btn">
+                                <span class="theme-bg">
+                                    <svg width="170" height="59" viewBox="0 0 170 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 20.0865C0 11.6149 6.60344 4.61156 15.0604 4.11409L85 0L154.94 4.11409C163.397 4.61156 170 11.6149 170 20.0865V39.7352C170 48.2794 163.287 55.3159 154.752 55.7175L85 59L15.2479 55.7175C6.71321 55.3159 0 48.2794 0 39.7352V20.0865Z" fill="#F39F5F"/>
+                                    </svg>
+                                </span>
+                                <span class="theme-text">En savoir plus <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
+                                <span class="theme-text2">En savoir plus <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
+                            </a>
+                            <div class="author-icon">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/home-1/icon/telephone.svg') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <span>Appelez-nous</span>
+                                    <h4><a href="tel:+2290167725898">+229 01 93 83 83 92 / 01 67 72 58 98</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Counter Section --}}
+    <section class="counter-section fix section-padding pt-0">
+        <div class="container">
+            <div class="row g-4">
+                @foreach ([
+                    ['count' => '100', 'label' => 'Salles intelligentes',   'fill' => '#FEF4DE', 'bg' => ''],
+                    ['count' => '95',  'label' => 'Aire de jeux sécurisée', 'fill' => '#C0EEFF', 'bg' => 'active'],
+                    ['count' => '100', 'label' => 'Sécurité des enfants',   'fill' => '#E6E8FC', 'bg' => ''],
+                    ['count' => '99',  'label' => 'Environnement propre',   'fill' => '#FEDFEF', 'bg' => ''],
+                ] as $i => $counter)
+                <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="{{ ($i + 1) * 0.2 }}s">
+                    <div class="counter-box-items {{ $counter['bg'] }}">
+                        <svg width="330" height="330" viewBox="0 0 330 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M330 200.106C330 297.696 240.218 330 154.752 330C69.2846 330 0 297.696 0 200.106C0 102.516 69.2846 0 154.752 0C240.218 0 330 102.516 330 200.106Z" fill="{{ $counter['fill'] }}"/>
+                        </svg>
+                        <div class="counter-box">
+                            <h2><span class="count">{{ $counter['count'] }}</span>%</h2>
+                            <p>{{ $counter['label'] }}</p>
+                            <div class="bg-shape {{ $i > 0 ? 'bg-'.($i+1) : '' }}"></div>
+                        </div>
+                        <div class="bg-image">
+                            <img src="{{ asset('assets/img/home-1/counter-bg.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why Choose Us Section --}}
+    <section class="why-choose-us-section-3 inner-style fix section-padding how-work-section-3 bg-cover"
+             style="background-image: url('{{ asset('assets/img/inner-page/choose-us-bg.png') }}');">
+        <div class="doll-shape bz-gsap-animate-circle">
+            <img src="{{ asset('assets/img/home-3/ball.png') }}" alt="">
+        </div>
+        <div class="girl-shape bz-gsap-animate-circle">
+            <img src="{{ asset('assets/img/home-3/girl.png') }}" alt="">
+        </div>
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Pourquoi nous choisir</span>
+                <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+                    Pourquoi les familles<br>nous font confiance
+                </h2>
+            </div>
+            <div class="why-choose-wrapper-3">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <ul class="values-list">
+                            <li>
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">Priorité à une éducation sûre et de qualité</h3>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">Enseignants qualifiés et vérifiés</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">L'enfant au cœur de chaque décision</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 order-2 order-xl-1 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="choose-us-image">
+                            <img src="{{ asset('assets/img/home-3/choose-us.png') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 order-1 order-xl-2 wow fadeInUp" data-wow-delay=".7s">
+                        <ul class="values-list style-2">
+                            <li>
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">Environnement bienveillant et stimulant</h3>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">Suivi personnalisé de chaque élève</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><img src="{{ asset('assets/img/home-2/icon/check3.svg') }}" alt=""></div>
+                                <div class="content">
+                                    <h3 class="title">Valeurs morales et sociales au programme</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Schedule Section --}}
+    <section class="schedule-section fix section-padding">
+        <div class="vec-5 bz-gsap-animate-circle d-none d-xl-block">
+            <img src="{{ asset('assets/img/home-1/vec5.png') }}" alt="">
+        </div>
+        <div class="container">
+            <div class="section-title-area bb-bottom align-items-end">
+                <div class="section-title">
+                    <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Emploi du temps</span>
+                    <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">Notre emploi du temps journalier</h2>
+                </div>
+                <ul class="nav mt-0 justify-content-center justify-content-lg-start wow fadeInUp" data-wow-delay=".3s">
+                    <li class="nav-item">
+                        <a href="#Play" data-bs-toggle="tab" class="nav-link active">Groupe Éveil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Nursery" data-bs-toggle="tab" class="nav-link">Maternelle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Kindergarten" data-bs-toggle="tab" class="nav-link">Primaire</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                @foreach (['Play' => true, 'Nursery' => false, 'Kindergarten' => false] as $tabId => $isActive)
+                <div id="{{ $tabId }}" class="tab-pane fade {{ $isActive ? 'show active' : '' }}">
+                    <div class="row">
+                        @foreach ([
+                            ['time' => '7h00 - 8h00',   'bg' => '',     'delay' => '.2s'],
+                            ['time' => '8h00 - 8h30',   'bg' => 'bg-2', 'delay' => '.4s'],
+                            ['time' => '8h30 - 10h30',  'bg' => 'bg-3', 'delay' => '.6s'],
+                            ['time' => '10h30 - 12h00', 'bg' => 'bg-4', 'delay' => '.8s'],
+                        ] as $slot)
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ $slot['delay'] }}">
+                            <div class="schedule-box-items">
+                                <div class="bg-shape {{ $slot['bg'] }}"></div>
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/home-1/pocket-watch.png') }}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h3>{{ $slot['time'] }}</h3>
+                                    <p>Activités pédagogiques, éveil et développement des compétences sociales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Book Admission Banner --}}
+    <section class="book-admission-banner bg-cover section-padding"
+             style="background-image: url('{{ asset('assets/img/home-1/book-admission-bg.png') }}');">
+        <div class="container">
+            <div class="book-admission-content">
+                <div class="bg-shape">
+                    <img src="{{ asset('assets/img/home-1/book-bg.png') }}" alt="">
+                    <div class="bg-shape2">
+                        <img src="{{ asset('assets/img/home-1/book-bg2.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="section-title mb-0">
+                        <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Inscriptions ouvertes</span>
+                        <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+                            Inscrivez votre enfant<br>à l'École SALANON
+                        </h2>
+                    </div>
+                    <div class="info-content wow fadeInUp" data-wow-delay=".3s">
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/home-1/icon/phone.svg') }}" alt="">
+                        </div>
+                        <div class="info-cont">
+                            <p>Appelez-nous dès maintenant</p>
+                            <h3><a href="tel:+2290167725898">+229 01 93 83 83 92 / 01 67 72 58 98</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="vec-1"><img src="{{ asset('assets/img/home-1/vec6.png') }}" alt=""></div>
+                <div class="vec-2"><img src="{{ asset('assets/img/home-1/vec7.png') }}" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Team Section --}}
+    <section class="team-section fix section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Notre équipe pédagogique</span>
+                <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">Nos enseignants experts</h2>
+            </div>
+        </div>
+        <div class="swiper team-slider-inner wow fadeInUp" data-wow-delay=".3s">
+            <div class="swiper-wrapper">
+                @foreach ([
+                    ['img' => 'team-1.png', 'bg' => 'team-bg.png',  'name' => 'Dawson Timms',   'role' => 'Professeur de sport'],
+                    ['img' => 'team-2.png', 'bg' => 'team-bg2.png', 'name' => 'Michele Bailey', 'role' => 'Directrice'],
+                    ['img' => 'team-3.png', 'bg' => 'team-bg3.png', 'name' => 'Brian Marsh',    'role' => 'Enseignant senior'],
+                    ['img' => 'team-4.png', 'bg' => 'team-bg4.png', 'name' => 'Sarah Dupont',   'role' => 'Enseignante'],
+                ] as $member)
+                <div class="swiper-slide">
+                    <div class="team-single-items">
+                        <div class="bg-shape">
+                            <img src="{{ asset('assets/img/home-1/' . $member['bg']) }}" alt="">
+                            <div class="items">
+                                <div class="thumb">
+                                    <img src="{{ asset('assets/img/home-1/' . $member['img']) }}" alt="">
+                                    <div class="social-icon d-flex align-items-center">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3><a href="{{ route('team') }}">{{ $member['name'] }}</a></h3>
+                                    <p>{{ $member['role'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="swiper-dot text-center mt-5">
+            <div class="dotss"></div>
+        </div>
+    </section>
+
+    {{-- Testimonial Section --}}
+    <section class="testimonial-section-inner section-padding">
+        <div class="container">
+            <div class="testimonial-wrapper-3 p-0 mb-0">
+                <div class="section-title-area">
+                    <div class="section-title">
+                        <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Témoignages</span>
+                        <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">
+                            Ce que disent les parents<br>de nos élèves
+                        </h2>
+                    </div>
+                    <div class="array-button wow fadeInUp">
+                        <button class="array-prev">
+                            <img src="{{ asset('assets/img/home-3/arrow-left.png') }}" alt="">
+                        </button>
+                        <button class="array-next">
+                            <img src="{{ asset('assets/img/home-3/arrow-right.png') }}" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper testimonial-slider-inner">
+                    <div class="swiper-wrapper">
+                        @foreach ([
+                            [
+                                'text'   => "Nous sommes tellement reconnaissants d'avoir trouvé l'École SALANON ! Les enseignants sont bienveillants, responsables et s'occupent de nos enfants comme s'ils faisaient partie de leur famille. Nos enfants sont toujours joyeux et enthousiastes. Nous recommandons vivement cette école à toutes les familles.",
+                                'author' => 'Mme Adjobi',
+                                'city'   => 'Cotonou, Bénin',
+                                'img'    => 'client-1.png',
+                            ],
+                            [
+                                'text'   => "L'ambiance à l'École SALANON est vraiment exceptionnelle. Mon fils a gagné en confiance en soi depuis qu'il y est inscrit. Les activités proposées sont variées et parfaitement adaptées à son âge. Je suis pleinement satisfaite.",
+                                'author' => 'M. Kokou',
+                                'city'   => 'Porto-Novo, Bénin',
+                                'img'    => 'client-1.png',
+                            ],
+                            [
+                                'text'   => "La pédagogie de l'École SALANON est vraiment adaptée aux enfants. Ma fille adore aller à l'école chaque matin, ce qui en dit long sur la qualité de l'enseignement et de l'accueil. Merci à toute l'équipe !",
+                                'author' => 'Mme Dossou',
+                                'city'   => 'Abomey-Calavi, Bénin',
+                                'img'    => 'client-1.png',
+                            ],
+                        ] as $testimonial)
+                        <div class="swiper-slide">
+                            <div class="testimonial-box-items-3">
+                                <div class="quote-icon">
+                                    <svg width="39" height="30" viewBox="0 0 39 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.64725 1.65902C10.0126 0.301374 11.2931 -0.225102 12.5042 0.0873093C13.7037 0.399721 14.4654 1.16148 14.7836 2.36677C15.096 3.57206 14.6236 4.85834 13.3662 6.21791C10.4311 9.36517 8.54119 12.4546 7.70809 15.4977C9.5922 15.7098 11.1099 16.4658 12.267 17.7772C13.4183 19.0885 13.9968 20.7431 13.9968 22.7333C13.9968 24.8295 13.3354 26.5613 12.0298 27.919C10.7184 29.2824 9.01173 29.9631 6.91548 29.9631C4.71896 29.9631 3.01034 29.2072 1.80697 27.6837C0.601682 26.166 0 24.1449 0 21.6283C0 17.8543 0.784887 14.2153 2.35659 10.7016C3.93407 7.18792 6.02454 4.17567 8.64725 1.65902ZM32.7107 1.65902C34.0683 0.301374 35.3565 -0.225102 36.5618 0.0873093C37.7671 0.399721 38.5289 1.16148 38.8413 2.36677C39.1537 3.57206 38.687 4.85834 37.4296 6.21791C34.4887 9.36517 32.6046 12.4546 31.7657 15.4977C33.6556 15.7098 35.1733 16.4658 36.3266 17.7772C37.4778 19.0885 38.0564 20.7431 38.0564 22.7333C38.0564 24.8295 37.4007 26.5613 36.0893 27.919C34.778 29.2824 33.0771 29.9631 30.9808 29.9631C28.7766 29.9631 27.0699 29.2072 25.8723 27.6837C24.6612 26.166 24.0596 24.1449 24.0596 21.6283C24.0596 17.8543 24.8502 14.2153 26.4219 10.7016C27.9917 7.18792 30.088 4.17567 32.7107 1.65902Z" fill="#F39F5F"/>
+                                    </svg>
+                                </div>
+                                <p class="text">{{ $testimonial['text'] }}</p>
+                                <div class="testimonial-bottom">
+                                    <div class="client-info">
+                                        <div class="client-img">
+                                            <img src="{{ asset('assets/img/home-3/' . $testimonial['img']) }}" alt="">
+                                        </div>
+                                        <div class="info-content">
+                                            <p><b>{{ $testimonial['author'] }},</b> {{ $testimonial['city'] }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Brand Section --}}
+    <div class="brand-section fix style-2 section-padding">
+        <div class="container">
+            <p class="text-center wow fadeInUp" data-wow-delay=".3s">Nos partenaires</p>
+            <div class="swiper brand-slider wow fadeInUp" data-wow-delay=".5s">
+                <div class="swiper-wrapper">
+                    @for ($b = 1; $b <= 7; $b++)
+                    <div class="swiper-slide">
+                        <div class="brand-box-1">
+                            <span class="brand-img-1">
+                                <img src="{{ asset('assets/img/home-1/brand-' . $b . '.png') }}" alt="">
+                            </span>
+                            <span class="brand-img-1">
+                                <img src="{{ asset('assets/img/home-1/brand-hover-' . $b . '.png') }}" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    @endfor
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Instagram Gallery --}}
+    <div class="instagram-wrapper section-padding pt-0 wow fadeInUp" data-wow-delay=".3s">
+        <div class="instagram-section">
+            @for ($ig = 1; $ig <= 5; $ig++)
+                @foreach (range(1, 4) as $repeat)
+                <div class="instagram-image">
+                    <img src="{{ asset('assets/img/home-1/instagram-' . $ig . '.jpg') }}" alt="">
+                    <img src="{{ asset('assets/img/home-1/instagram-' . $ig . '.jpg') }}" alt="">
+                    <a href="#" class="icon">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram, galerie
+                    </a>
+                </div>
+                @endforeach
+            @endfor
+        </div>
+    </div>
+
+@endsection

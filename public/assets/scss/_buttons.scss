@@ -1,0 +1,111 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+
+  .theme-text,
+  .theme-text2 {
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: $heading-font;
+    color: $white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-transform: capitalize;
+    transition: transform 0.6s ease;
+    z-index: 99;
+  }
+
+  /* First Text (Visible Initially) */
+  .theme-text {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Second Text (Hidden Below Initially) */
+  .theme-text2 {
+    top: 50%;
+    transform: translateY(150%);
+  }
+
+  .theme-bg {
+    display: block;
+
+    svg {
+      width: 100%;
+      max-width: 170px;
+      display: block;
+
+      path {
+        transition: fill 0.4s ease;
+      }
+    }
+  }
+
+  &:hover {
+
+    /* First Text Goes Up */
+    .theme-text {
+      transform: translateY(-250%);
+    }
+
+    /* Second Text Comes From Bottom */
+    .theme-text2 {
+      transform: translateY(-50%);
+    }
+
+    .theme-bg svg path {
+      fill: $header-color;
+    }
+  }
+
+  &.hover-header {
+    &:hover {
+      .theme-bg svg path {
+        fill: $theme-color;
+      }
+    }
+  }
+}
+
+
+
+//>>>>> Component Button End <<<<<//
+
+
+@keyframes slideRight {
+    49% {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+    51% {
+      opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    49% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+    51% {
+      opacity: 1;
+    }
+}
