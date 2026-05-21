@@ -28,8 +28,8 @@ class EventController extends Controller
                     'Dossiers d\'inscription disponibles',
                 ],
                 'intervenants' => [
-                    ['nom' => 'Mme Adjobi',  'role' => 'Directrice pédagogique'],
-                    ['nom' => 'M. Kokou',    'role' => 'Coordinateur des activités'],
+                    ['nom' => 'Mme Adjobi', 'role' => 'Directrice pédagogique'],
+                    ['nom' => 'M. Kokou',   'role' => 'Coordinateur des activités'],
                 ],
             ],
             [
@@ -53,8 +53,8 @@ class EventController extends Controller
                     'Témoignages d\'élèves bénéficiaires',
                 ],
                 'intervenants' => [
-                    ['nom' => 'Mme Dossou',  'role' => 'Responsable actions sociales'],
-                    ['nom' => 'M. Agbessi',  'role' => 'Coordinateur général'],
+                    ['nom' => 'Mme Dossou', 'role' => 'Responsable actions sociales'],
+                    ['nom' => 'M. Agbessi', 'role' => 'Coordinateur général'],
                 ],
             ],
             [
@@ -119,16 +119,11 @@ class EventController extends Controller
     public function show(string $slug)
     {
         $event = collect($this->events())->firstWhere('slug', $slug);
-
-        if (!$event) {
-            abort(404);
-        }
+        if (!$event) abort(404);
 
         $others = collect($this->events())
             ->where('slug', '!=', $slug)
-            ->take(3)
-            ->values()
-            ->all();
+            ->take(3)->values()->all();
 
         return view('pages.event-details', compact('event', 'others'));
     }

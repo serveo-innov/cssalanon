@@ -95,7 +95,7 @@
                                 <img src="{{ asset('assets/img/home-1/icon/icon-4.svg') }}" alt="">
                             </div>
                         </div>
-                        <h2>Programme moderne</h2>
+                        <h2>Stratégie moderne</h2>
                     </div>
                 </div>
             </div>

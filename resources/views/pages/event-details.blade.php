@@ -29,6 +29,7 @@
         <div class="container">
             <div class="event-details-wrapper">
                 <div class="row g-4">
+
                     <div class="col-lg-8">
                         <div class="event-details-items">
                             <div class="thumb fix">
@@ -106,12 +107,19 @@
                                     <div class="news-box-items">
                                         <div class="thumb">
                                             <img src="{{ asset('assets/img/home-1/' . $other['image']) }}" alt="{{ $other['titre'] }}">
+                                            <img src="{{ asset('assets/img/home-1/' . $other['image']) }}" alt="">
                                         </div>
                                         <div class="content">
                                             <ul>
                                                 <li><i class="fa-regular fa-calendar"></i> {{ $other['date_full'] }}</li>
+                                                <li><i class="fa-regular fa-clock"></i> {{ $other['heure'] }}</li>
                                             </ul>
                                             <h3><a href="{{ route('event.show', $other['slug']) }}">{{ $other['titre'] }}</a></h3>
+                                            <div class="arrow-btn text-end">
+                                                <a href="{{ route('event.show', $other['slug']) }}" class="icon">
+                                                    <span class="bg"></span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -144,6 +152,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

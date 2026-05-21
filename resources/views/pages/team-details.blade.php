@@ -98,7 +98,9 @@
                     <div class="swiper-slide wow fadeInUp" data-wow-delay="{{ ($i * 0.2 + 0.2) . 's' }}">
                         <div class="team-items">
                             <div class="team-image">
-                                <div class="shape-img"><img src="{{ asset('assets/img/inner-page/team-shape.png') }}" alt=""></div>
+                                <div class="shape-img">
+                                    <img src="{{ asset('assets/img/inner-page/team-shape.png') }}" alt="">
+                                </div>
                                 <img src="{{ asset('assets/img/home-1/' . $other['image']) }}" alt="{{ $other['nom'] }}">
                                 <div class="social-profile">
                                     <span class="plus-btn"><i class="fas fa-share-alt"></i></span>

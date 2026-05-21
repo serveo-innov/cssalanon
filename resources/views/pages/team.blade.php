@@ -84,7 +84,7 @@
                             <ul class="wow fadeInUp" data-wow-delay=".5s">
                                 <li>
                                     <div class="icon"><img src="{{ asset('assets/img/home-2/choose-icon1.png') }}" alt=""></div>
-                                    <div class="title"><h3 class="icon-title">Environnement <br>adapté à l'enfant</h3></div>
+                                    <div class="title"><h3 class="icon-title">Environnement d'apprentissage<br>adapté à l'enfant</h3></div>
                                 </li>
                                 <li>
                                     <div class="icon"><img src="{{ asset('assets/img/home-2/choose-icon2.png') }}" alt=""></div>
@@ -93,8 +93,8 @@
                             </ul>
                             <a href="{{ route('programs') }}" class="theme-btn hover-header wow fadeInUp" data-wow-delay=".3s">
                                 <span class="theme-bg"><svg width="170" height="59" viewBox="0 0 170 59" fill="none"><path d="M0 20.0865C0 11.6149 6.60344 4.61156 15.0604 4.11409L85 0L154.94 4.11409C163.397 4.61156 170 11.6149 170 20.0865V39.7352C170 48.2794 163.287 55.3159 154.752 55.7175L85 59L15.2479 55.7175C6.71321 55.3159 0 48.2794 0 39.7352V20.0865Z" fill="#385469"/></svg></span>
-                                <span class="theme-text">Les programmes <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
-                                <span class="theme-text2">Les programmes <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
+                                <span class="theme-text">Voir les programmes <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
+                                <span class="theme-text2">Voir les programmes <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
                             </a>
                         </div>
                     </div>
