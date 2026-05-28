@@ -44,7 +44,6 @@
                                         <p>{{ $program['enseignant']['nom'] }}</p>
                                     </div>
                                     <ul class="class-list">
-                                        <li><i class="fa-regular fa-circle-play me-2"></i> {{ $program['seances'] }} Séances</li>
                                         <li><i class="fas fa-star me-2"></i> {{ $program['avis'] }}</li>
                                     </ul>
                                 </div>
@@ -68,15 +67,13 @@
                             <ul class="details-list">
                                 <li><span><i class="fa-solid fa-chart-simple me-2"></i> Âge</span> {{ $program['age'] }}</li>
                                 <li><span><i class="fa-regular fa-clock me-2"></i> Horaires :</span> {{ $program['horaires'] }}</li>
-                                <li><span><i class="fa-solid fa-book me-2"></i> Séances :</span> {{ $program['seances'] }}</li>
                                 <li><span><i class="fa-solid fa-users me-2"></i> Élèves max :</span> {{ $program['max_eleves'] }}</li>
                                 <li><span><i class="fa-solid fa-certificate me-2"></i> Certificat :</span> {{ $program['certificat'] }}</li>
                                 <li><span><i class="fa-solid fa-globe me-2"></i> Langue :</span> {{ $program['langue'] }}</li>
                             </ul>
                             <a href="{{ route('contact') }}" class="theme-btn w-100 mb-3">
                                 <span class="theme-bg"><svg width="170" height="59" viewBox="0 0 170 59" fill="none"><path d="M0 20.0865C0 11.6149 6.60344 4.61156 15.0604 4.11409L85 0L154.94 4.11409C163.397 4.61156 170 11.6149 170 20.0865V39.7352C170 48.2794 163.287 55.3159 154.752 55.7175L85 59L15.2479 55.7175C6.71321 55.3159 0 48.2794 0 39.7352V20.0865Z" fill="#F39F5F"/></svg></span>
-                                <span class="theme-text">Inscrire mon enfant <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
-                                <span class="theme-text2">Inscrire mon enfant <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
+                                <span class="theme-text">Inscrire <img src="{{ asset('assets/img/icon/arrow1.svg') }}" alt=""></span>
                             </a>
                             <div class="social-icon d-flex align-items-center mt-3">
                                 <span>Partager : </span>

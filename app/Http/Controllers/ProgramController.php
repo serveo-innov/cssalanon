@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 class ProgramController extends Controller
 {
+    public function getProgramsPublic(): array
+    {
+        return $this->programs();
+    }
+    
     private function programs(): array
     {
         return [
@@ -16,6 +21,8 @@ class ProgramController extends Controller
                 'hand'        => 'hand-1.png',
                 'image'       => 'program-01.jpg',
                 'categorie'   => 'Maternelle',
+                'seances'     => 30,
+                'avis'        => '4.8 (36 avis)',
                 'langue'      => 'Français',
                 'max_eleves'  => 30,
                 'certificat'  => 'Oui',
@@ -28,11 +35,12 @@ class ProgramController extends Controller
                     'Enseignants spécialisés petite enfance',
                     'Bilan trimestriel avec les parents',
                 ],
-                'directrice' => [
+                'enseignant' => [
                     'nom'        => 'Mme HOUKPATIN',
                     'role'       => 'Directrice principale spécialisée petite enfance',
                     'experience' => '20 ans+',
                     'eleves'     => 200,
+                    'note'       => '4.9',
                     'image'      => 'teacher.jpg',
                     'bio'        => 'Mme HOUKPATIN dirige les sections des tout-petits depuis plus de 05 ans au CS SALANON avec patience et créativité. Sa méthode favorise l\'épanouissement naturel de chaque enfant.',
                 ],
@@ -46,6 +54,8 @@ class ProgramController extends Controller
                 'hand'        => 'hand-2.png',
                 'image'       => 'program-02.jpg',
                 'categorie'   => 'Primaire',
+                'seances'     => 40,
+                'avis'        => '4.9 (55 avis)',
                 'langue'      => 'Français',
                 'max_eleves'  => '40+',
                 'certificat'  => 'Oui',
@@ -58,73 +68,80 @@ class ProgramController extends Controller
                     'Suivi personnalisé de chaque élève',
                     'Réunions parents-enseignants régulières',
                 ],
-                'directrice' => [
+                'enseignant' => [
                     'nom'        => 'Mme HOUKPATIN',
                     'role'       => 'Directrice principale du Primaire',
                     'experience' => '5 ans+',
-                    'eleves'     => "200+",
+                    'eleves'     => '200+',
+                    'note'       => '4.8',
                     'image'      => 'teacher.jpg',
-                    'bio'        => 'Mme HOUKPATIN passionnée par l\'éveil des jeunes enfants. Elle utilise des méthodes actives pour rendre chaque apprentissage mémorable.',
+                    'bio'        => 'Mme HOUKPATIN est passionnée par l\'éveil des jeunes enfants. Elle utilise des méthodes actives pour rendre chaque apprentissage mémorable et prépare ses élèves avec sérieux.',
                 ],
             ],
             [
                 'slug'        => 'secondaire-cycleI',
                 'titre'       => 'Secondaire 1er Cycle',
                 'age'         => '10 ans+',
-                'duree'       => '07 ans',
+                'duree'       => '04 ans',
                 'thumb'       => 'program3.png',
                 'hand'        => 'hand-3.png',
                 'image'       => 'program-03.jpg',
                 'categorie'   => 'Secondaire',
+                'seances'     => 45,
+                'avis'        => '4.7 (28 avis)',
                 'langue'      => 'Français',
                 'max_eleves'  => '300+',
                 'certificat'  => 'Oui',
                 'horaires'    => '7h30 – 19h00',
-                'description' => 'Le Programme Secondaire couvre l\'ensemble du cycle collège-lycée pour les jeunes de 10 ans et plus. L\'accent est mis sur la maîtrise des sciences, des lettres et de la culture générale.',
+                'description' => 'Le Programme Secondaire 1er cycle couvre l\'ensemble du collège pour les jeunes de 10 ans et plus. L\'accent est mis sur la maîtrise des sciences, des lettres et de la culture générale avec une préparation rigoureuse au BEPC.',
                 'prerequis'   => 'Avoir validé le cycle Primaire ou équivalent. Test de niveau à l\'inscription.',
                 'points'      => [
                     'Transition douce vers le 2ème cycle',
                     'Cours de renforcement disponibles',
                     'Activités parascolaires incluses',
-                    'Préparation aux examens nationaux',
+                    'Préparation aux examens nationaux (BEPC)',
                 ],
-                'directrice' => [
-                    'nom'        => 'M. ZAMMA',
-                    'role'       => 'Directrice principale du collège',
+                'enseignant' => [
+                    'nom'        => 'Mme. ZAMMA',
+                    'role'       => 'Directrice du collège – 1er Cycle',
                     'experience' => '12 ans',
                     'eleves'     => 300,
+                    'note'       => '4.8',
                     'image'      => 'teacher.jpg',
-                    'bio'        => 'M. ZAMMA est reconnue pour sa rigueur pédagogique et sa capacité à motiver les élèves. elle prépare ses élèves avec sérieux aux grandes étapes scolaires.',
+                    'bio'        => 'Mme. ZAMMA est reconnue pour sa rigueur pédagogique et sa capacité à motiver les élèves. Il prépare ses élèves avec sérieux aux grandes étapes scolaires, notamment le BEPC.',
                 ],
             ],
             [
                 'slug'        => 'secondaire',
-                'titre'       => 'Secondaire 1er & 2ème Cycle',
+                'titre'       => 'Secondaire 2ème Cycle',
                 'age'         => '10 ans+',
-                'duree'       => '07 ans',
+                'duree'       => '03 ans',
                 'thumb'       => 'program4.png',
                 'hand'        => 'hand-4.png',
                 'image'       => 'program-03.jpg',
                 'categorie'   => 'Secondaire',
+                'seances'     => 50,
+                'avis'        => '4.7 (32 avis)',
                 'langue'      => 'Français',
                 'max_eleves'  => '300+',
                 'certificat'  => 'Oui',
                 'horaires'    => '7h00 – 19h00',
-                'description' => 'Le Programme Secondaire 2ème cycle couvre l\'ensemble du lycée pour les jeunes de 16 ans et plus. L\'accent est mis sur la maîtrise des sciences, des lettres et de la culture générale.',
+                'description' => 'Le Programme Secondaire 2ème cycle couvre l\'ensemble du secondaire pour les jeunes de 16 ans et plus. L\'accent est mis sur la maîtrise des sciences, des lettres et de la culture générale avec une préparation sérieuse au BAC séries ABCD.',
                 'prerequis'   => 'Avoir validé le Secondaire 1er cycle ou équivalent. Test de niveau à l\'inscription.',
                 'points'      => [
                     'Programme officiel pour les séries ABCD',
                     'Encadrement renforcé et personnalisé',
-                    'Clubs sportifs et culturels',
+                    'Clubs sportifs et culturels actifs',
                     'Orientation scolaire et professionnelle',
                 ],
-                'directrice' => [
+                'enseignant' => [
                     'nom'        => 'M. ZAMMA',
-                    'role'       => 'Diretrice du Collège',
+                    'role'       => 'Directrice du Secondaire – 2ème Cycle',
                     'experience' => '10 ans+',
                     'eleves'     => 400,
+                    'note'       => '4.7',
                     'image'      => 'teacher.jpg',
-                    'bio'        => 'M. ZAMMA dirige le Collège SALANON avec passion. Son expérience lui permet de guider chaque adolescent vers ses propres objectifs avec clarté et bienveillance vers la réussite.',
+                    'bio'        => 'Mme. ZAMMA dirige le Secondaire SALANON avec passion. Son expérience lui permet de guider chaque adolescent vers ses propres objectifs avec clarté et bienveillance vers la réussite au BAC.',
                 ],
             ],
         ];

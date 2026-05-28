@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 class TeamController extends Controller
 {
+    public function getMembersPublic(): array
+    {
+        return $this->members();
+    }
+    
     private function members(): array
     {
         return [

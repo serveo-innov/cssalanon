@@ -7,25 +7,50 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        return view('pages.contact');
+    }
+
     public function send(Request $request)
     {
-        $request->validate([
-            'name'    => 'required|min:2|max:100',
-            'email'   => 'required|email',
-            'message' => 'required|min:10',
-        ], [
-            'name.required'    => 'Le nom est obligatoire.',
-            'name.min'         => 'Le nom doit contenir au moins 2 caractères.',
-            'email.required'   => "L'email est obligatoire.",
-            'email.email'      => "L'adresse email n'est pas valide.",
-            'message.required' => 'Le message est obligatoire.',
-            'message.min'      => 'Le message doit contenir au moins 10 caractères.',
+        $validated = $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email|max:255',
+            'phone'   => 'nullable|string|max:30',
+            'subject' => 'nullable|string|max:255',
+            'message' => 'required|string|min:10',
         ]);
 
-        // Option 1 : envoi par email (nécessite config mail dans .env)
-        // Mail::to('contact@cssalanon.com')->send(new \App\Mail\ContactMail($request->all()));
+        try {
+            // Envoi à l'adresse de l'école
+            Mail::send(
+                'emails.contact',
+                ['data' => $validated],
+                function ($mail) use ($validated) {
+                    $mail->to('contact@cssalanon.com', 'CS SALANON')
+                         ->replyTo($validated['email'], $validated['name'])
+                         ->subject('📬 Nouveau message : ' . ($validated['subject'] ?? 'Contact via le site'));
+                }
+            );
 
-        // Option 2 : simple redirection avec message de succès (sans config email)
-        return redirect()->route('contact')->with('success', 'Votre message a bien été envoyé. Nous vous répondrons très prochainement !');
+            // Accusé de réception à l'expéditeur
+            Mail::send(
+                'emails.contact-confirm',
+                ['data' => $validated],
+                function ($mail) use ($validated) {
+                    $mail->to($validated['email'], $validated['name'])
+                         ->subject('✅ Votre message a bien été reçu – CS SALANON');
+                }
+            );
+
+            return redirect()->route('contact')
+                ->with('success', 'Votre message a bien été envoyé ! Nous vous répondrons dans les plus brefs délais.');
+
+        } catch (\Exception $e) {
+            return redirect()->route('contact')
+                ->withInput()
+                ->with('error', 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous appeler directement.');
+        }
     }
 }

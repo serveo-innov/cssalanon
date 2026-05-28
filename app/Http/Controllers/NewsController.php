@@ -76,6 +76,12 @@ class NewsController extends Controller
         ];
     }
 
+    // Méthode publique pour le SearchController
+    public function getArticlesPublic(): array
+    {
+        return $this->articles();
+    }
+
     public function index()
     {
         $articles = $this->articles();

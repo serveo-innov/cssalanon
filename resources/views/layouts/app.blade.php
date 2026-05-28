@@ -51,20 +51,25 @@
     {{-- Header --}}
     @include('partials.header')
 
-    {{-- Search Popup --}}
+    {{-- Search Popup — pointe vers /recherche --}}
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="#">
-                <input type="text" id="search" name="search" placeholder="Rechercher...">
-                <button type="submit" aria-label="search submit" class="search-btn">
+            <form role="search" method="GET" action="{{ route('search') }}">
+                <input type="text"
+                       name="q"
+                       id="search"
+                       placeholder="Rechercher un article, programme, événement..."
+                       value="{{ request('q') }}"
+                       autocomplete="off">
+                <button type="submit" aria-label="Rechercher" class="search-btn">
                     <span><i class="fa-regular fa-magnifying-glass"></i></span>
                 </button>
             </form>
         </div>
     </div>
 
-    {{-- Smooth Scroll Wrapper (requis par GSAP ScrollSmoother) --}}
+    {{-- Smooth Scroll Wrapper --}}
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
@@ -75,16 +80,16 @@
         </div>
     </div>
 
-</div>{{-- /.page-wrapper --}}
+</div>
 
-{{-- jQuery (en premier, obligatoire) --}}
+{{-- jQuery --}}
 <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/viewport.jquery.js') }}"></script>
 
 {{-- Bootstrap --}}
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-{{-- GSAP & plugins (premium – dans vos fichiers achetés) --}}
+{{-- GSAP --}}
 <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
 <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
 <script src="{{ asset('assets/js/ScrollSmoother.min.js') }}"></script>

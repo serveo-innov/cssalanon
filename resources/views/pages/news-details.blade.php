@@ -30,6 +30,7 @@
             <div class="news-details-area">
                 <div class="row g-4">
 
+                    {{-- Contenu principal --}}
                     <div class="col-12 col-lg-8">
                         <div class="blog-post-details">
                             <div class="single-blog-post">
@@ -65,24 +66,26 @@
                                 </div>
                             </div>
 
+                            {{-- Tags & partage --}}
                             <div class="row tag-share-wrap mt-4 mb-5">
                                 <div class="col-lg-8 col-12">
                                     <div class="tagcloud">
                                         @foreach ($article['tags'] as $tag)
-                                        <a href="#">{{ $tag }}</a>
+                                        <a href="{{ route('search') }}?q={{ urlencode($tag) }}">{{ $tag }}</a>
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-12 mt-3 mt-lg-0 text-lg-end">
                                     <div class="social-share">
                                         <span class="me-3">Partager :</span>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($article['titre']) }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(url()->current()) }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                     </div>
                                 </div>
                             </div>
 
+                            {{-- Commentaires --}}
                             <div class="comments-area">
                                 <div class="comments-heading">
                                     <h3>{{ count($article['commentaires_list']) }} Commentaires</h3>
@@ -108,6 +111,7 @@
                                 @endforeach
                             </div>
 
+                            {{-- Formulaire commentaire --}}
                             <div class="comment-form-wrap">
                                 <h3>Laisser un commentaire</h3>
                                 <form action="#" method="POST">
@@ -141,17 +145,22 @@
                         </div>
                     </div>
 
+                    {{-- Sidebar --}}
                     <div class="col-lg-4 col-12">
                         <div class="gt-main-sideber sticky-style">
+
+                            {{-- Recherche --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Recherche</h3></div>
                                 <div class="gt-search-widget">
-                                    <form action="#">
-                                        <input type="text" placeholder="Rechercher...">
+                                    <form action="{{ route('search') }}" method="GET">
+                                        <input type="text" name="q" placeholder="Rechercher..." value="{{ request('q') }}">
                                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     </form>
                                 </div>
                             </div>
+
+                            {{-- Articles récents --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Articles récents</h3></div>
                                 <div class="gt-recent-post-area">
@@ -170,16 +179,43 @@
                                     @endforeach
                                 </div>
                             </div>
+
+                            {{-- Newsletter sidebar --}}
+                            <div class="gt-single-sideber-widget">
+                                <div class="gt-widget-title"><h3>Newsletter</h3></div>
+                                <div class="p-3" style="background:#f9f9f9; border-radius:6px;">
+                                    <p style="font-size:13px; color:#666; margin-bottom:12px;">
+                                        Recevez nos actualités directement dans votre boîte mail.
+                                    </p>
+                                    <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                                        @csrf
+                                        <div style="display:flex; gap:8px;">
+                                            <input type="email"
+                                                   name="email"
+                                                   placeholder="Votre email"
+                                                   required
+                                                   style="flex:1; padding:10px 14px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
+                                            <button type="submit"
+                                                    style="background:#F39F5F; color:#fff; border:none; padding:10px 16px; border-radius:4px; cursor:pointer;">
+                                                <i class="fa-solid fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            {{-- Tags --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Tags populaires</h3></div>
                                 <div class="tagcloud">
                                     @foreach ($article['tags'] as $tag)
-                                    <a href="#">{{ $tag }}</a>
+                                    <a href="{{ route('search') }}?q={{ urlencode($tag) }}">{{ $tag }}</a>
                                     @endforeach
-                                    <a href="#">Éducation</a>
-                                    <a href="#">Enfants</a>
+                                    <a href="{{ route('search') }}?q=Éducation">Éducation</a>
+                                    <a href="{{ route('search') }}?q=Enfants">Enfants</a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 

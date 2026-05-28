@@ -87,11 +87,11 @@
                             {{-- Image avec bouton vidéo --}}
                             <div class="video-image">
                                 <img src="{{ asset('assets/img/inner-page/contact-image.jpg') }}" alt="École SALANON">
-                                <div class="video-box">
+                                {{-- <div class="video-box">
                                     <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                         <i class="fa-solid fa-play"></i>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -170,12 +170,12 @@
         </div>
     </section>
 
-    {{-- Google Map -- à remplacer par les coordonnées de l'École SALANON --}}
+    {{-- Google Map -- Complexe Scolaire SALANON --}}
     <div class="map-section">
         <div class="map-items">
             <div class="googpemap">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31741.30453893578!2d2.3912767!3d6.3702928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a9c564a67a01%3A0x58c8a7c4c2e5b42a!2sCotonou%2C%20B%C3%A9nin!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5!2d2.403619!3d6.382155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023553da52e95f9%3A0xb24a5844f82d6cdc!2sComplexe%20Scolaire%20SALANON!5e0!3m2!1sfr!2sbj!4v1716800000000!5m2!1sfr!2sbj"
                     style="border:0;"
                     allowfullscreen=""
                     loading="lazy"

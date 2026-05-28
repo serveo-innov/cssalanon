@@ -23,6 +23,24 @@
         </div>
     </div>
 
+    {{-- Message newsletter --}}
+    @if (session('newsletter_success'))
+    <div class="container mt-4">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-circle-check me-2"></i> {{ session('newsletter_success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+    @endif
+    @if (session('newsletter_error'))
+    <div class="container mt-4">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-circle-exclamation me-2"></i> {{ session('newsletter_error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    </div>
+    @endif
+
     <section class="news-standard-section section-padding">
         <div class="container">
             <div class="gt-news-standard-wrapper">
@@ -58,23 +76,32 @@
 
                     <div class="col-lg-4 col-12">
                         <div class="gt-main-sideber sticky-style">
+
+                            {{-- Recherche --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Recherche</h3></div>
                                 <div class="gt-search-widget">
-                                    <form action="#">
-                                        <input type="text" placeholder="Rechercher...">
+                                    <form action="{{ route('search') }}" method="GET">
+                                        <input type="text" name="q" placeholder="Rechercher..." value="{{ request('q') }}">
                                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     </form>
                                 </div>
                             </div>
+
+                            {{-- Catégories --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Catégories</h3></div>
                                 <ul class="gt-category-list">
                                     @foreach ([['Éducation', 10], ['Activités', 8], ['Bien-être', 6], ['Événements', 12], ['Enseignants', 5]] as [$cat, $nb])
-                                    <li><a href="#">{{ $cat }}</a><span>({{ $nb }})</span></li>
+                                    <li>
+                                        <a href="{{ route('search') }}?q={{ urlencode($cat) }}">{{ $cat }}</a>
+                                        <span>({{ $nb }})</span>
+                                    </li>
                                     @endforeach
                                 </ul>
                             </div>
+
+                            {{-- Articles récents --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Articles récents</h3></div>
                                 <div class="gt-recent-post-area">
@@ -93,16 +120,41 @@
                                     @endforeach
                                 </div>
                             </div>
+
+                            {{-- Newsletter sidebar --}}
+                            <div class="gt-single-sideber-widget">
+                                <div class="gt-widget-title"><h3>Newsletter</h3></div>
+                                <div class="p-3" style="background:#f9f9f9; border-radius:6px;">
+                                    <p style="font-size:13px; color:#666; margin-bottom:12px;">
+                                        Recevez nos actualités directement dans votre boîte mail.
+                                    </p>
+                                    <form action="{{ route('newsletter.subscribe') }}" method="POST">
+                                        @csrf
+                                        <div style="display:flex; gap:8px;">
+                                            <input type="email"
+                                                   name="email"
+                                                   placeholder="Votre email"
+                                                   required
+                                                   style="flex:1; padding:10px 14px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
+                                            <button type="submit"
+                                                    style="background:#F39F5F; color:#fff; border:none; padding:10px 16px; border-radius:4px; cursor:pointer;">
+                                                <i class="fa-solid fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            {{-- Tags --}}
                             <div class="gt-single-sideber-widget">
                                 <div class="gt-widget-title"><h3>Tags populaires</h3></div>
                                 <div class="tagcloud">
-                                    <a href="#">Éducation</a>
-                                    <a href="#">Enfants</a>
-                                    <a href="#">Activités</a>
-                                    <a href="#">Bien-être</a>
-                                    <a href="#">Événements</a>
+                                    @foreach (['Éducation', 'Enfants', 'Activités', 'Bien-être', 'Événements'] as $tag)
+                                    <a href="{{ route('search') }}?q={{ urlencode($tag) }}">{{ $tag }}</a>
+                                    @endforeach
                                 </div>
                             </div>
+
                         </div>
                     </div>
 

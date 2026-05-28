@@ -27,7 +27,7 @@
         <div class="container">
             <div class="section-title text-center">
                 <span class="sec-sub tz-sub-tilte tz-sub-anim tx-subTitle">Événements scolaires</span>
-                <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">Des événements inoubliables pour nos enfants</h2>
+                <h2 class="tx-title sec_title tz-itm-title tz-itm-anim">Bientôt, des événements inoubliables pour nos enfants</h2>
             </div>
 
             @foreach ($events as $i => $event)
